@@ -6,10 +6,10 @@ namespace SweetSavory.Models
   {
     public Treat()
     {
-      this.JoinEntities = new HashSet<TreatSweet>();
+      this.JoinEntities = new HashSet<TreatFlavor>();
     }
     public int TreatId { get; set; }
     public string Name { get; set; }
-    public virtual ICollection<CategoryItem> JoinEntities { get; set; }
+    public virtual ICollection<TreatFlavor> JoinEntities { get; set; }
   }
 }
