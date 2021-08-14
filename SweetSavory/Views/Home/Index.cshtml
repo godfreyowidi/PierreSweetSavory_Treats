@@ -1,8 +1,41 @@
 ﻿@{
   Layout = "_Layout";
 }
-<h1>Welcome to the To Do List!</h1>
+<h1>Pierre's Sweet and Savory Treats</h1>
+<div class="container">
+    <div class="text-center">
+        <button class="btn btn-dark filter-button" data-filter="all">All</button>
+        
+            <button class="btn btn-outline-secondary filter-button">
+                @Html.ActionLink("See all treats", "Index", "Treats")
+            </button>
+            <button class="btn btn-outline-secondary filter-button">
+                @Html.ActionLink("See all flavors", "Index", "Flavors")
+            </button>
+            <button class="btn btn-outline-secondary filter-button">
+                @Html.ActionLink("Create an account", "Index", "Accounts")
+            </button>
+                
+        </button>
+    </div>
+    <br />
+</div>
 
-<p>@Html.ActionLink("See all items", "Index", "Items")</p>
-<p>@Html.ActionLink("See all categories", "Index", "Categories")</p>
-<p>@Html.ActionLink("Create an account", "Index", "Account")</p>
+@section Scripts{
+    <script>
+    $(document).ready(function(){
+    $(".filter-button").click(function(){
+        var value = $(this).attr('data-filter');
+        if(value == "all")
+        {
+            $('.filter').show('1000');
+        }
+        else
+        {
+            $(".filter").not('.'+value).hide('3000');
+            $('.filter').filter('.'+value).show('3000');
+        }
+    });
+});
+    </script>
+}
