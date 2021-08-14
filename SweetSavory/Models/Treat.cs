@@ -10,7 +10,7 @@ namespace SweetSavory.Models
     }
     public int TreatId { get; set; }
     public string Name { get; set; }
-    public string DisplayOrder { get; set; }
+    public int DisplayOrder { get; set; }
     public virtual ICollection<TreatFlavor> JoinEntities { get; set; }
   }
 }
