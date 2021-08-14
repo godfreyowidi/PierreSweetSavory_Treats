@@ -69,3 +69,26 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.rows{
+  width:100%;
+  display:block;
+
+}
+.column{
+    width:100%;
+    display:inline-block;
+    
+}
+.theLabels{
+  
+  width:30%;
+  float: left;
+}
+.theInputs{
+  
+
+  width:60%;
+  float:right;
+}
+

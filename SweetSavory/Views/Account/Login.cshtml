@@ -1,0 +1,38 @@
+@{
+    Layout = "_Layout";
+}
+
+@using SweetSavory.ViewModels
+
+@model LoginViewModels
+
+
+<div class="row">
+    <div class="col-md-4">
+            @using (Html.BeginForm())
+            {
+                <h4>Use account to log in.</h4>
+                <hr />
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email)
+                    
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password)
+            
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                </div>
+            }
+    </div>
+</div>
+
+<p>@Html.ActionLink("Register", "Register")</p>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

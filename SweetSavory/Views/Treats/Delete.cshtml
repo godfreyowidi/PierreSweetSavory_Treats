@@ -1,9 +1,8 @@
 @model SweetSavory.Models.Treat
 
-<form method="post" asp-action="DeletePost">
-    <input asp-for="TreatId" hidden />
+@using (Html.BeginForm())
+{
     <div class="border p-3">
-       
         <div class="form-group row">
             <h2 class="text-info pl-3">Delete Treat</h2>
         </div>
@@ -45,7 +44,7 @@
         </div>
     </div>
 
-</form>
+}
 
 @section Scripts{
 
