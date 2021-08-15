@@ -1,30 +1,26 @@
 @{
     Layout = "_Layout";
 }
-@using Microsoft.AspNetCore.Identity
-
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
 
 <ul class="navbar-nav">
 @if (User.Identity.IsAuthenticated)
 {
     <li class="nav-item">
-        <a id="manage" class="nav-link text-dark" asp-area="" asp-page="/Index">Hello @User.Identity.Name!</a>
+        <a class="nav-link text-dark">Hello @User.Identity.Name!</a>
     </li>
     <li class="nav-item">
-        <form id="logoutForm" class="form-inline" asp-area="" asp-page="/Logout">
-            <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
+        @using (Html.BeginForm("LogOff", "Account"))
+        {
+        <input type="submit" class="nav-link text-dark" value="Log out" />
+        }
     </li>
 }
 else
 {
-    <li class="nav-item">
-        <a class="nav-link text-dark" id="register" asp-area="" asp-page="/Register">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" id="login" asp-area="" asp-page="/Login">Login</a>
-    </li>
+    
+    <p>@Html.ActionLink("Log in", "Login")</p>
+
+    <p>@Html.ActionLink("Register", "Register")</p>
+
 }
 </ul>

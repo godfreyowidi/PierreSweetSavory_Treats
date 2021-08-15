@@ -1,9 +1,9 @@
 @model SweetSavory.Models.Flavor
 
-<form method="post">
-    <input asp-for="FlavorId" hidden />
+@using (Html.BeginForm(FormMethod.Post))
+{
     <div class="border p-3">
-       
+    
         <div class="form-group row">
             <h2 class="text-info pl-3">Edit Flavor</h2>
         </div>
@@ -15,11 +15,10 @@
                     </div>
                     <div class="col-8">
                         <input asp-for="Name" class="form-control" />
-                        <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
 
                 </div>
-              
+            
                 <div class="form-group row">
                     <div class="col-8 offset-4 row">
 
@@ -33,9 +32,9 @@
                 </div>
             </div>
             <div class="col-4">
-                @* Keep this empty *@
+            
             </div>
         </div>
     </div>
 
-</form>
+}

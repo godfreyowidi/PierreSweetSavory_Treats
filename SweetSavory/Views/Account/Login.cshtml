@@ -13,26 +13,18 @@
             {
                 <h4>Use account to log in.</h4>
                 <hr />
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email)
-                    @Html.TextBoxFor(m => m.Email)
-                    
+                <div class="form-group">   
+                    @Html.TextBoxFor(user => user.Email, new { placeholder = "Email", @class ="form-group" })  
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Password)
-                    @Html.PasswordFor(m => m.Password)
-            
+                    @Html.PasswordFor(user => user.Password, new { placeholder = "Password", @class ="form-group" })
                 </div>
                 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Log in</button>
+                    <input type="submit" value="Log in" class="btn btn-primary" />
                 </div>
             }
     </div>
 </div>
 
 <p>@Html.ActionLink("Register", "Register")</p>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}

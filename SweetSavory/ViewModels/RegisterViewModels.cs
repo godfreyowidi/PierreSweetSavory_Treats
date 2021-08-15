@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SweetSavory.ViewModels
 {
-  public class RegisterViewModels
+  public class RegisterViewModel
   {
     [Required]
     [EmailAddress]
