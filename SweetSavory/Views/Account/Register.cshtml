@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        @using (Html.BeginForm(FormMethod.Post))
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
         {
             <h4>Create a new account.</h4>
             <hr />
@@ -25,7 +25,6 @@
                 @Html.PasswordFor(user => user.ConfirmPassword)
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
-
         }
     </div>
 </div>
