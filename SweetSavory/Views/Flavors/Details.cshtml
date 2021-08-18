@@ -13,6 +13,24 @@
             </div>
     
         </div>
+@if(@Model.JoinEntities.Count == 0)
+{
+    <p>Flavor has no treats yet! </p>
+}
+else
+{
+    <ul>
+    @foreach (var join in Model.JoinEntities)
+    {
+        <li>@join.Treat.Name</li>
+        @using (Html.BeginForm("DeleteTreat", "Flavors"))
+        {
+        @Html.Hidden("joinId", @join.TreatFlavorId)
+        <input type="submit" value="Delete" />
+        }
+    }
+    </ul>
+}
     <div class="card-footer bg-dark">
         <div class="row">
             <div class="col-12 col-md-6 pb-1 ">

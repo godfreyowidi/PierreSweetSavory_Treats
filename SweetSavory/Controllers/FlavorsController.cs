@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using SweetSavory.Models;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace SweetSavory.Controllers
@@ -62,8 +61,6 @@ namespace SweetSavory.Controllers
         .FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);
     }
-
-
 
     public ActionResult Edit(int id)
     {
