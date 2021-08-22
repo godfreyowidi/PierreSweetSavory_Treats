@@ -6,7 +6,14 @@
 
 <h2>Treat Details</h2>
 <hr />
-<h3>@Html.DisplayFor(model => model.Name)</h3>
+<div class="container backgroundWhite pt-4">
+    <div class="card" style="border:1px solid #000000; ">
+        <div class="card-header bg-dark text-light ml-0 row container" style="border-radius: 0px;">
+            <div class="col-12 col-md-6">
+                <h1 class="text-white">@Html.DisplayFor(model => model.Name)</h1>
+            </div>
+    
+        </div>
 
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -22,7 +29,15 @@ else
         }
     </ul>
 }
-<p>@Html.ActionLink("Back to treats", "Index")</p>
-<p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId})</p>
-<p>@Html.ActionLink("Delete treat", "Delete", new { id = Model.TreatId })</p>
 
+<div class="card-footer bg-dark">
+        <div class="row">
+            <div class="col-12 col-md-6 pb-1 ">
+                <p>@Html.ActionLink("Back to treats", "Index")</p>
+                <p>@Html.ActionLink("Back to treats", "Index")</p>
+                <p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId})</p>
+                <p>@Html.ActionLink("Delete treat", "Delete", new { id = Model.TreatId })</p>
+            </div>
+        </div>
+    </div>
+</div>

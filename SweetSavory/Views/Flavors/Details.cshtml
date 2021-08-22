@@ -6,7 +6,16 @@
 
 <h2>Flavor Details</h2>
 <hr />
-<h3>@Html.DisplayFor(model => model.Name)</h3>
+<div class="container backgroundWhite pt-4">
+    <div class="card" style="border:1px solid #000000; ">
+        <div class="card-header bg-dark text-light ml-0 row container" style="border-radius: 0px;">
+            <div class="col-12 col-md-6">
+                <h1 class="text-white">@Html.DisplayFor(model => model.Name)</h1>
+            </div>
+        </div>
+        
+    
+
 @if(@Model.JoinEntities.Count == 0)
 {
     <p>This flavor does not belong to any treats</p>
@@ -27,8 +36,14 @@ else
 </ul>
 }
 
-<p>@Html.ActionLink("Add a Treat", "AddTreat", new { id = Model.FlavorId })</p>
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</p>
-<p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId})</p>
+<div class="card-footer bg-dark">
+        <div class="row">
+            <div class="col-12 col-md-6 pb-1 ">
+                <p>@Html.ActionLink("Add a Treat", "AddTreat", new { id = Model.FlavorId })</p>
+                <p>@Html.ActionLink("Back to list", "Index")</p>
+                <p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</p>
+                <p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId})</p>  
+            </div>
+        </div>
+    </div>
+</div>

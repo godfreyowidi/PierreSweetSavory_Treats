@@ -4,13 +4,18 @@
 
 @model SweetSavory.Models.Flavor
 
-<h4>Add a new flavor</h4>
+<div class="border p-3">
+    <div class="form-group row">
+        <h2 class="text-info pl-3">Add Flavor</h2>
+    </div>
+</div>
+<br />
 @using (Html.BeginForm())
 {
     @Html.TextBoxFor(user => user.Name, new { placeholder = "Name", @class ="form-group" })
-    
+
     @Html.DropDownList("TreatId", null, new { placeholder = "Select Treat", @class ="form-group" })
 
-    <input type="submit" value="Add new flavor" class="btn btn-default" />
+    <input type="submit" value="Add new flavor" class="btn btn-info text-white" />
 }
 <p>@Html.ActionLink("Show all flavors", "Index")</p>

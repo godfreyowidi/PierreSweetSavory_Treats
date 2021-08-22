@@ -4,11 +4,34 @@
 
 @model SweetSavory.Models.Treat
 
-<h4>Add a new Treat</h4>
+<div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-info pl-3">Add Treat</h2>
+        </div>
+</div>
 @using (Html.BeginForm())
 {
-    @Html.TextBoxFor(user => user.Name, new { placeholder = "Name", @class ="form-group" })
+    <div class="row">
+        <div class="col-8">
+            <div class="form-group row">
+                <div class="col-6">
+                    @* @Html.LabelFor(model => model.Name) *@
+                </div>
+                <div class="col-6">
+                    @Html.TextBoxFor(user => user.Name, new { placeholder = "Name", @class ="form-group" })
+                </div>
+            </div>
+        </div>
+    </div>
     
-    <input type="submit" value="Add new treat" />
+    <div class="form-group row">
+        <div class="col-2 offset-4 row">
+
+            <div class="col">
+                <input type="submit" class="btn btn-info w-100" value="Create"/>
+            </div>
+        </div>
+    </div>
+    
 }
-<p>@Html.ActionLink("Show all treat", "Index")</p>
+<p class="btn btn-default w-30">@Html.ActionLink("Show all treat", "Index")</p>

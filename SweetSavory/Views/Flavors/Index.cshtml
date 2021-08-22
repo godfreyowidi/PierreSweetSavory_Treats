@@ -5,15 +5,25 @@
 @using SweetSavory.Models;
 @model IEnumerable<SweetSavory.Models.Flavor>;
 
-<h1>@User.Identity.Name</h1>
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Flavor List</h2>
+        </div>
+        <div class="col-6 text-right">
+            <p class="btn btn-info">@Html.ActionLink("Add new flavor", "Create")</p>
+        </div>
+    </div>
+</div>
+
+<br />
 
 @if (@Model.Any())
 {
     <ul>
     @foreach (Flavor flavor in Model)
     {  
-        <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })
-        </li>
+        <p>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</P>
     }
     </ul>
 }
@@ -21,9 +31,6 @@ else
 {
     <h3>No flavors have been added yet!</h3>
 } 
-
-<p>@Html.ActionLink("Add new flavor", "Create")</p>
-
 
 @using (Html.BeginForm("LogOff", "Account"))
 {
