@@ -6,11 +6,14 @@
 
 <div class="container p-3">
     <div class="row pt-4">
-        <div class="col-6">
+        <div class="col-4">
             <h2 class="text-primary">Treat List</h2>
         </div>
-        <div class="col-6 text-right">
-            <p class="btn btn-default">@Html.ActionLink("Add new treat", "Create")</p>
+        <div class="col-4">
+            <h6 class="text-default">You are logged in as @User.Identity.Name</h6>
+        </div>
+        <div class="col-4 text-right">
+            <p class="btn btn-info">@Html.ActionLink("Add new treat", "Create")</p>
         </div>
     </div>
 
@@ -39,3 +42,8 @@
 </tr>
 }
 </ul>
+
+@using (Html.BeginForm("LogOff", "Account"))
+{
+<input type="submit" class="btn btn-default" value="Log out" />
+}
