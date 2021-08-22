@@ -1,51 +1,31 @@
-@model IEnumerable<SweetSavory.Models.Flavor>
+@{
+    Layout = "_Layout";
+}
 
+@using SweetSavory.Models;
+@model IEnumerable<SweetSavory.Models.Flavor>;
 
-<div class="container p-3">
-    <div class="row pt-4">
-        <div class="col-6">
-            <h2 class="text-primary">Flavor List</h2>
-        </div>
-        <div class="col-6 text-right">
-            <a asp-controller="Flavors" asp-action="Create" class="btn btn-primary"></i> &nbsp; Create New Flavor
-            </a>
-        </div>
-    </div>
+<h1>@User.Identity.Name</h1>
 
-    <br /><br />
-
-    @if (Model.Count() > 0)
-    {
-        <table class="table table-bordered table-striped" style="width:100%">
-            <thead>
-                <tr>
-                    <th>
-                        Flavor Name
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var flav in Model)
-                {
-                <tr>
-                    <td width="80%">@flav.Name</td>
-                    <td class="text-center">
-                        <div class="w-75 btn-group" role="group">
-                            <a asp-controller="Flavors" asp-route-Id="@flav.FlavorId" asp-action="Create" class="btn btn-primary mx-2">
-                            </a>
-                            <a asp-controller="Flavors" asp-route-Id="@flav.FlavorId" asp-action="Delete" class="btn btn-danger mx-2">
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                }
-            </tbody>
-        </table>
+@if (@Model.Any())
+{
+    <ul>
+    @foreach (Flavor flavor in Model)
+    {  
+        <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })
+        </li>
     }
-    else
-    {
-        <p> No Flavors exists.</p>
-    }
+    </ul>
+}
+else
+{
+    <h3>No flavors have been added yet!</h3>
+} 
 
-</div>
+<p>@Html.ActionLink("Add new flavor", "Create")</p>
+
+
+@using (Html.BeginForm("LogOff", "Account"))
+{
+<input type="submit" class="btn btn-default" value="Log out" />
+}

@@ -1,53 +1,28 @@
-@model SweetSavory.Models.Treat
+@{
+  Layout = "_Layout";
+}
 
-@using (Html.BeginForm(FormMethod.Post))
-{
-    <div class="border p-3">
-        <div class="form-group row">
-            <h2 class="text-info pl-3">Add Treat</h2>
+@model SweetSavory.Models.Flavor 
+<div class="border p-3">
+  <div class="row">
+    <div class="col-8">
+      <div class="form-group row">
+        <div class="col-4">
+          @Html.DisplayFor(model => model.Name)
         </div>
-        <div class="row">
-            <div class="col-8">
-                <div class="form-group row">
-                    <div class="col-4">
-                        @Html.LabelFor(model => model.Name)
-                    </div>
-                    <div class="col-8">
-                        @Html.TextBoxFor(model => model.Name)
-                    </div>
-
-                </div>
-                <div class="form-group row">
-                    <div class="col-4">
-                        @Html.LabelFor(model => model.DisplayOrder)
-                    </div>
-                    <div class="col-8">
-                        @Html.TextBoxFor(model => model.DisplayOrder)
-                    </div>
-
-                </div>
-                <div class="form-group row">
-                    <div class="col-8 offset-4 row">
-
-                        <div class="col">
-                            <input type="submit" class="btn btn-info w-100" value="Create"/>
-                        </div>
-                        <div class="col">
-                            <a asp-action="Index" class="btn btn-success w-100"> Back</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
+</div>
 
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.FlavorId)
+
+  @Html.Label("Select treat")
+  @Html.DropDownList("TreatId")
+
+  <input type="submit" value="Save" />
 }
 
-@section Scripts{ 
-
-    @{ <partial name="_ValidationScriptsPartial" /> }
-
-}
+<p>@Html.ActionLink("Back to list", "Index")</p>

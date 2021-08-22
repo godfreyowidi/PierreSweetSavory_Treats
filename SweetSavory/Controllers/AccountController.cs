@@ -61,6 +61,7 @@ namespace SweetSavory.Controllers
         return View();
       }
     }
+
     [HttpPost]
     public async Task<ActionResult> LogOff()
     {
