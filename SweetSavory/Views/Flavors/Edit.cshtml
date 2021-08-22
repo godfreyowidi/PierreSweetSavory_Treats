@@ -16,10 +16,7 @@
     @Html.EditorFor(model => model.Name)
 
     @Html.DropDownList("TreatId", null, new { placeholder = "Select Treat", @class ="form-group" })
-    @* @Html.LabelFor(model => model.JoinEntities)
-    @Html.DropDownList("TreatId") *@
-
-
+    
     <input type="submit" value="Save" />
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>
