@@ -12,6 +12,7 @@ This application is used by Pierre to market hi sweet and savory treats. It user
 * MySql Workbench
 * HTTP RESTful Routing
 * Git/GitHub
+* Identity/Authorization
 
 ## _Setup Requirements_
 
@@ -88,9 +89,13 @@ _http://localhost:5001_
 
 _Copy and paste either of the above in the browser to experience the splash page_
 
+_As a guest user, you will not be able to create, view list, edit or delete treats and flavors._
+
 _Click on either *See all Treats* or *See all Flavor* on the splash page_
 
 _You will be taken to a *Login* or *Register* page where you will provide your credential for authentication_
+
+_As a logged in user, you will be able to create, view list, edit and delete treats and flavors. You will also be able to add flavors to treats and also delete flavors from individual treats_
 
 _You can follow along and add a treat and then also add flavors to it._
 
